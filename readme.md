@@ -87,10 +87,8 @@ A lightweight, flexible, and beautiful modal system with smooth animations and e
 
 ### Backdrop Color Options
 ```html
-```html
 <div class="modal-backdrop modal-backdrop-black"> <!-- Black backdrop -->
 <div class="modal-backdrop modal-backdrop-white"> <!-- White backdrop -->
-```
 ```
 
 ## 📚 API
