@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Modal System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button onclick="showModal('myModal')" class="btn-primary">Open Modal</button>
+
+    <!-- 
+    Modal Usage Cheatsheet:
+    
+    1. Size Options (add as class):
+        - modal-sm    : Small modal (300px)
+        - modal-md    : Medium modal (500px, default)
+        - modal-lg    : Large modal (800px)
+        - modal-xl    : Extra large modal (1140px)
+        - modal-full  : Fullscreen modal
+    
+    2. Position Options (add as class):
+        - modal-center    : Center of screen (default)
+        - modal-top      : Top of screen (20px from top)
+        - modal-bottom   : Bottom of screen (20px from bottom)
+    
+    3. Animation Options (add as class):
+        - fade           : Fade animation
+        - slide-down    : Slide from top animation
+        - slide-up      : Slide from bottom animation
+        - slide-left    : Slide from left animation
+        - slide-right   : Slide from right animation
+        - zoom          : Zoom in/out animation
+    
+    4. Additional Options (add as class):
+        - scrollable    : Enables scroll when content exceeds modal height
+        - no-backdrop   : Removes dark backdrop
+        - no-close      : Removes close button
+        - no-backdrop-close : Disables closing on backdrop click
+    -->
+    
+    <div id="myModal" class="modal zoom modal-full modal-center">
+        <div class="modal-backdrop modal-backdrop-black"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Premium Modal Title</h2>
+                <button class="modal-close" onclick="hideModal('myModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This is a premium modal with customizable options. You can easily modify its behavior and appearance using simple class names.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="hideModal('myModal')">Cancel</button>
+                <button class="btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            document.body.style.overflow = 'hidden';
+            // Small delay to ensure transition works
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+
+        function hideModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Handle backdrop clicks
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal-backdrop')) {
+                const modal = event.target.closest('.modal');
+                if (!modal.classList.contains('no-backdrop-close')) {
+                    hideModal(modal.id);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
