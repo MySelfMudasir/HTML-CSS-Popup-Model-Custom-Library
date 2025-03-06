@@ -5,7 +5,7 @@
 
 A lightweight, flexible, and beautiful modal system with smooth animations and extensive customization options. No dependencies required!
 
-![Modal Preview](https://raw.githubusercontent.com/MySelfMudasir/Core-HTML-CSS-Model-Library/refs/heads/main/Screenshot%202024-12-31%20150907.jpg)
+![Modal Preview](https://raw.githubusercontent.com/MySelfMudasir/HTML-CSS-Popup-Model-Custom-Library/refs/heads/main/Screenshot%202024-12-31%20150907.jpg)
 
 ## ✨ Features
 
